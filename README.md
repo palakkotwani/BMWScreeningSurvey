@@ -201,3 +201,9 @@ Results and voice fields are stored in **`.data/respondents.json`** on the serve
 ## Segmentation rules (code)
 
 Implemented in [`lib/segmentation.ts`](lib/segmentation.ts): under 18 → screen out; no car → screen out; terminate brands (Toyota, Honda, Ford, Tesla, Other) in multi-select → screen out; BMW → **BMW Customer**; Mercedes/Audi (without terminate brands) → **Potential BMW Customer**.
+
+## E2E Demo Videos
+
+bmw_customer: https://drive.google.com/file/d/1lsj_Ny-ZpY97kW2w8ih6FNYPMLoYBLOh/view?usp=sharing
+
+potential_bmw_customer: https://drive.google.com/file/d/1zrhE3x06nEpj7g6k3ovhE3X88_RFiAxo/view?usp=sharing
