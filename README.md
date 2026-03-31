@@ -24,10 +24,10 @@ BMWScreeningSurvey is a single Next.js app for a two-part research flow: a **Typ
 1. Open the app (deployed URL or local dev). The first visit creates a **respondent id** for this browser.
 2. Complete the **Typeform** screener. The server stores your segment and whether you qualify.
 3. If you **qualify**, start the **voice interview**. Talk with the agent; when it ends the call cleanly, the interview is marked **completed**. If you hang up early or lose connection, progress can be saved as **in progress** so you can **resume** later on the same browser.
-4. If you **don’t qualify**, you see a thank-you path; you can retake the screener per your product rules.
+4. If you **don’t qualify**, you will see a thank-you path; but there is an option to retake the screener per your product rules.
 5. **Same device, same browser** matters—clearing site data or switching devices starts a new respondent id.
 
-**Testing multiple runs on one machine:** use **Testing tools → New participant ID (reload)** (shown in `npm run dev`; optional `NEXT_PUBLIC_ENABLE_SESSION_TOOLS` in production) to clear the stored id and simulate a fresh respondent.
+**Testing multiple runs on one machine:** use **Testing tools → New participant ID (reload)** (shown in `npm run dev`; optional `NEXT_PUBLIC_ENABLE_SESSION_TOOLS` available) to clear the stored id and simulate a fresh respondent.
 
 ---
 
@@ -79,19 +79,8 @@ Open **[http://localhost:3000](http://localhost:3000)** (Next.js default; use an
 | `TYPEFORM_ACCESS_TOKEN` | Responses API when webhook cannot reach localhost |
 | `TYPEFORM_REF_*` | Optional ref overrides for `age` / `owns_car` / `brands` |
 | `ELEVENLABS_API_KEY` / `ELEVENLABS_AGENT_ID` | Voice (server-only) |
-| `NEXT_PUBLIC_ENABLE_SESSION_TOOLS` | Show testing tools on production builds |
+| `NEXT_PUBLIC_ENABLE_SESSION_TOOLS` | Show testing tools |
 | `NEXT_PUBLIC_DEBUG_VOICE_PROMPT` | Log resolved voice prompt in browser console |
-
-### Production build
-
-```bash
-npm run build
-npm start
-```
-
-Run `npm start` only after `npm run build`. Mirror the same env vars on your host. Run **`npm run lint`** before you ship changes.
-
----
 
 ## Typeform configuration (required)
 
@@ -188,8 +177,6 @@ Results and voice fields are stored in **`.data/respondents.json`** on the serve
 | Command | What it does |
 | ------- | -------------- |
 | `npm run dev` | Dev server |
-| `npm run build` | Production build |
-| `npm run start` | Run production server (after `build`) |
 | `npm run lint` | ESLint |
 
 ---
